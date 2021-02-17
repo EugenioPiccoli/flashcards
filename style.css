@@ -1,0 +1,64 @@
+@import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap);
+
+body {
+    background-color: cornsilk;
+}
+
+h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    color: darkred;
+    font-size: 48px;
+}
+
+p {
+    font-size: 32px;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+}
+.container {
+    width: 1000px;
+    height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.card {
+    height: 250px;
+    width: 250px;
+    margin: 10px;
+    position: relative;
+    border-radius: 10px;
+    transition: all 700ms ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.front,
+.back {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center;*/
+    border-radius: 10px;
+    position: absolute;
+}
+
+.front {
+    background: linear-gradient(darkorange,darkred);
+    z-index: 2;
+    backface-visibility: hidden;
+}
+
+.back {
+    background: linear-gradient(yellow,darkorange);
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+.card-container:hover .card {
+    transform: rotateY(180deg);
+}
